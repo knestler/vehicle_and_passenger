@@ -6,7 +6,6 @@ class Park
     @name = name
     @admission = admission
     @vehicles  = []
-    @park_guest = []
     @revenue = ()
   end
 
@@ -15,8 +14,8 @@ class Park
   end
 
   def park_guest
-    vehicles.each do |passengers|
-      @park_guest << passengers
+    vehicles.flat_map do |vehicle|
+      vehicle.passengers
     end
   end
 

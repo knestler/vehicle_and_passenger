@@ -32,10 +32,10 @@ RSpec.describe Park do
     park = Park.new("Acadia", 5)
 
     vehicle = Vehicle.new("2001", "Honda", "Civic")
-    #vehicle_2 = Vehicle.new("2015", "Audi", "A3")
+    vehicle_2 = Vehicle.new("2015", "Audi", "A3")
     
     park.add_park_vehicles(vehicle)
-    # park.add_park_vehicles(vehicle_2)
+    park.add_park_vehicles(vehicle_2)
     
     charlie = Passenger.new({"name" => "Charlie", "age" => 18})
     jude = Passenger.new({"name" => "Jude", "age" => 20})
@@ -43,7 +43,7 @@ RSpec.describe Park do
 
     vehicle.add_passenger(charlie)
     vehicle.add_passenger(jude)
-    vehicle.add_passenger(taylor)
+    vehicle_2.add_passenger(taylor)
     # require"pry";binding.pry
 
     expect(park.park_guest).to eq([charlie, jude, taylor])
