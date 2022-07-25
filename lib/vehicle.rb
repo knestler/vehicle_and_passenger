@@ -8,6 +8,7 @@ class Vehicle
     @model = model
     @passengers = []
     @speed = false
+    @num_adults
   end
 
   def speeding?

@@ -6,7 +6,6 @@ class Park
     @name = name
     @admission = admission
     @vehicles  = []
-    @revenue = ()
   end
 
   def add_park_vehicles(vehicle)
@@ -19,18 +18,12 @@ class Park
     end
   end
 
-
-  #  @vehicles.find_all do |vehicle|
-  #   @park_passengers << @vehicles.passengers
-  #   end.flatten
-# end
-  
-  # def generate_revenue
-  #   @park_passengers.sum do |passenger|
-  #   @park_passengers.num_adults * admission
-  #   end
-  # end
-
+  def revenue
+    vehicles.sum do |vehicle|
+    vehicle.num_adults * @admission
+    #  require"pry";binding.pry
+    end
+  end
 end
 
 

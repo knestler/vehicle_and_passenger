@@ -50,7 +50,7 @@ RSpec.describe Park do
   
   end
 
-  xit "can generate revenue" do
+  it "can generate revenue" do
     park = Park.new("Acadia", 5)
 
     vehicle = Vehicle.new("2001", "Honda", "Civic")
@@ -67,7 +67,8 @@ RSpec.describe Park do
     vehicle.add_passenger(jude)
     vehicle.add_passenger(taylor)
     #require"pry";binding.pry
-    expect(park.generate_revenue).to eq(10)
+    expect(vehicle.num_adults).to eq 2
+    expect(park.revenue).to eq 10
   end
 
 end
